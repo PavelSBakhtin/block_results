@@ -31,3 +31,23 @@ void PrintArray(string[] array) // Выводит массив.
 int arrayLength = new Random().Next(3, 10);
 string[] array = FillArray(arrayLength);
 PrintArray(array);
+
+Console.Write("Enter length for sort: "); // Необходимо ввести значение длины текста для сортировки.
+int length = int.Parse(Console.ReadLine() ?? "0"); // В рамках данной задачи значение - 3.
+
+string[] SortArray(string[] array, int lengthArray, int length) // Создаёт новый массив по условию задачи.
+{
+    string[] sortArray = new string[0];
+    for (int i = 0; i < lengthArray; i++)
+    {
+        if (array[i].Length <= length)
+        {
+            Array.Resize(ref sortArray, sortArray.Length + 1);
+            sortArray[sortArray.Length - 1] = array[i];
+        }
+    }
+    return sortArray;
+}
+
+string[] sortArray = SortArray(array, arrayLength, length);
+PrintArray(sortArray);
