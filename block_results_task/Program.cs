@@ -20,12 +20,19 @@ string[] FillArray(int length) // Создаёт массив.
 
 void PrintArray(string[] array) // Выводит массив.
 {
-    Console.Write("[");
-    for (int i = 0; i < array.Length - 1; i++)
+    if (array.Length == 0)
     {
-        Console.Write(array[i] + ", ");
+        Console.WriteLine("The array is empty");
     }
-    Console.WriteLine(array[array.Length - 1] + "]");
+    else
+    {
+        Console.Write("[");
+        for (int i = 0; i < array.Length - 1; i++)
+        {
+            Console.Write(array[i] + ", ");
+        }
+        Console.WriteLine(array[array.Length - 1] + "]");
+    }
 }
 
 int arrayLength = new Random().Next(3, 10);
